@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 80px auto;   
+    grid-template-columns: 100%;   
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main";
+}
+
+header {
+    color: white;
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-area: header;
+    background-color: #7477BF;
+    grid-auto-flow: column;
+    
+}
+
+.userinfo {
+    margin-top: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto auto 90px 200px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #4C4C72;
+}
+
+#linkbox > a > img {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+}
+
+#linkbox {
+    width: 280px;
+    margin: 0 auto;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+}
+
+.userinfo {
+    display: grid;
+    grid-template-columns: 30px 30px 80px;
+    height: 30px;
+    width: 300px;
+}
+
+.userinfo > svg {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+}
+
+.userinfo > h3 {
+    margin-top: 20px;
+}
+
+#notification {
+    margin-top: 5px;
+    height: 50px;
+    width: 20px;
+    border-right: 1px solid #4C4C72;
+    color: lightgreen;
+}
+
+#userimage {
+    border-radius: 50%;
+    height: 60px;
+}
+
+header > h1 {
+    margin-left: 30px;
+}
+
+header > h1 > sup {
+    font-size: 12px;
+}
+
+header > h3 {
+    padding-top: 10px;
+}
+
+.alarmbell {
+    stroke: white;
+    fill: white;
+}
+
+main {
+    display: grid;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 90vw;
+}
+
+
+.alert-banner {
+    background-color: #7477BF;
+    color: white;
+    margin: 20px;
+    padding: 15px 30px;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 1fr 10px;
+}
+
+.alert-banner > p {
+    grid-row: 1;
+}
+
+@media (min-width: 768px) {
+    .container {
+    grid-template-columns: 70px 1fr;
+    grid-template-areas:
+    "header header"
+    "nav main";
+    }
+
+    header {
+        grid-template-columns: 1fr 320px;
+    }
+
+    .main {
+        grid-template-columns: 50%;
+    }
+
+    #linkbox {
+        height: 100vh;
+        display: block;
+        width: 55px;
+    }
+
+    #linkbox > a > img {
+        width: 25px;
+        margin: 5px;
+    }
+
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily, .members, .message {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
+
+
+    .widget-container-full {
+        width: 95vw;
+    }
+        .widget-container-half {
+        width: 45vw;
+    }
+
+    #alert {
+        margin-right: 30px;
+    }
+    
+    .alert-banner {
+    }
+}
