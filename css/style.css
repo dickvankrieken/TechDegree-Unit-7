@@ -162,16 +162,12 @@ main {
 
 
     .widget-container-full {
-        width: 95vw;
-    }
-        .widget-container-half {
-        width: 45vw;
-    }
+        width: 90vw;
+        }
+
 
     #alert {
-        margin-right: 30px;
+        margin: 0 20px 0 20px;
     }
     
-    .alert-banner {
-    }
 }
