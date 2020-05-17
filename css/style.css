@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -12,6 +13,8 @@ body {
     "nav"
     "main";
 }
+
+/* header */
 
 header {
     color: white;
@@ -30,26 +33,6 @@ header {
     grid-template-columns: auto auto 90px 200px;
 }
 
-nav {
-    grid-area: nav;
-    background-color: #4C4C72;
-}
-
-#linkbox > a > img {
-    padding: 8px;
-    width: 40px;
-    height: 40px;
-}
-
-#linkbox {
-    width: 280px;
-    margin: 0 auto;
-}
-
-main {
-    grid-area: main;
-    display: grid;
-}
 
 .userinfo {
     display: grid;
@@ -98,20 +81,109 @@ header > h3 {
     fill: white;
 }
 
+/* nav bar */
+
+nav {
+    grid-area: nav;
+    background-color: #4C4C72;
+}
+
+#linkbox > a > img {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+}
+
+#linkbox {
+    width: 280px;
+    margin: 0 auto;
+}
+
+
+/* main section */
+main {
+    grid-area: main;
+    display: grid;
+}
+
+
 main {
     display: grid;
 }
 
 .widget-container-full, .widget-container-half {
+    margin: 0 auto;
     width: 90vw;
 }
 
+.widget-container-full {
+    height: 250px;
+}
+
+#traffic-text {
+    float: left;
+}
+
+#traffic-options {
+    margin-top: 20px;
+    float: right;
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+}
+
+#traffic-options {
+    list-style: none;
+}
+
+.traffic-option-link {
+    padding: 10px;
+}
+
+.traffic-option-link:hover {
+    cursor: pointer;
+}
+
+
+#traffic-options .active {
+    background-color: #81C98F;
+    color: white;
+    border-radius: 20px;
+}
+
+ /* Top of dashboard */
+ .dashboard {
+     display: grid;
+     grid-template-columns: 200px 1fr;
+     height: 60px;
+ }
+
+ .dashboard > h2 {
+     margin-left: 40px;
+ }
+
+ .search-bar {
+    display: grid;
+    grid-template-columns: auto 250px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid#ececec;
+    border-left: 1px solid #ececec;
+    border-radius: 0 0 0 3px;
+}
+
+.search-bar > input {
+    margin-top: 15px;
+    margin-right: 20px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+/* Alert box */
 
 .alert-banner {
     background-color: #7477BF;
     color: white;
-    margin: 20px;
-    padding: 15px 30px;
+    margin: 40px 20px 30px;
+    padding: 0px 30px;
     border-radius: 3px;
     display: grid;
     grid-template-columns: 1fr 10px;
@@ -120,6 +192,17 @@ main {
 .alert-banner > p {
     grid-row: 1;
 }
+
+.alert-banner-close {
+    cursor: pointer;
+    display: inline-block;     
+    position: relative;    
+    z-index: 1;     
+    padding: 2em;     
+    margin: -1em; 
+ }
+
+/* Media queries */
 
 @media (min-width: 768px) {
     .container {
@@ -168,6 +251,14 @@ main {
 
     #alert {
         margin: 0 20px 0 20px;
+    }
+
+    .search-bar {
+        grid-template-columns: auto 400px;
+    }
+
+    .search-bar > input {
+        margin-right: 40px;
     }
     
 }

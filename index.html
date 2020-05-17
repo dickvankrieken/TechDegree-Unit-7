@@ -6,6 +6,7 @@
     <title>YourApp</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -28,12 +29,28 @@
                 <a><img src="/icons/icon-settings.svg"></a>
             </div>
         </nav>
-        <main>                
+        <main>  
+            <div class="dashboard">
+                <h2>Dashboard</h2>
+                <div class="search-bar">
+                    <div id="empty-space">
+                        
+                    </div>
+                    <input type="text" placeholder="Search..">
+                </div>
+            </div>              
                 <div id="alert">
                     
                 </div>
 
             <div class="widget-container-full">
+                <h3 id="traffic-text">TRAFFIC</h3>
+                <ul id="traffic-options">
+                    <li class="traffic-option-link">Hourly</li>
+                    <li class="traffic-option-link">Daily</li>
+                    <li class="traffic-option-link active">Weekly</li>
+                    <li class="traffic-option-link">Monthly</li>
+                </ul>
                 <canvas id="myChart" width="400" height="400"></canvas>
 
             </div>
