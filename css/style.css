@@ -7,7 +7,7 @@ body {
 .container {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
     "header"
     "nav"
@@ -105,7 +105,7 @@ main {
     grid-area: main;
     display: grid;
     grid-template-rows: auto auto 300px;
-    grid-template-columns: 100%;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .border-container {
@@ -113,11 +113,11 @@ main {
 }
 
 .widget-container-full {
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .widget-container-half {
-    margin: 10px 38px;
+    margin: 10px;
 }
 
 #traffic-text {
@@ -127,22 +127,14 @@ main {
 #traffic-options {
     margin-top: 20px;
     float: right;
-    display: grid;
-    grid-template-columns: repeat(4, 80px);
-}
-
-#traffic-options {
+    display: flex;
     list-style: none;
 }
 
 .traffic-option-link {
     padding: 10px;
-}
-
-.traffic-option-link:hover {
     cursor: pointer;
 }
-
 
 #traffic-options .active {
     background-color: #81C98F;
@@ -152,13 +144,14 @@ main {
 
 
 #line-chart-canvas-container, #canvas-container-daily, #canvas-container-mobile {
+    display: block;
     height: 200px;
 } 
 
  /* Top of dashboard */
  .dashboard {
      display: grid;
-     grid-template-columns: 200px 1fr;
+     grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
      height: 60px;
  }
 
@@ -168,7 +161,7 @@ main {
 
  .search-bar {
     display: grid;
-    grid-template-columns: auto 250px;
+    grid-template-columns: minmax(0, auto) minmax(0, 400px);
     background-color: #f8f8f8;
     border-bottom: 1px solid#ececec;
     border-left: 1px solid #ececec;
@@ -207,22 +200,49 @@ main {
     margin: -1em; 
  }
 
+ /* Social stats */
+
+#social-stats-flexcontainer {
+     display: flex;
+    justify-content: space-between;
+}
+.social-box {
+    background-color: #fbfbfb;
+    border-radius: 3px;
+    border: 1px solid #ececec;
+    /* width: 200px; */
+ }
+
+.social-svg {
+    /* border-radius: 300px; */
+    /* background-color: #7477BF; */
+    /* width: 80px;
+    height: 80px; */
+}
+
+
+/* SVG's */
+
+svg {
+    height: 90px;
+    width: 90px;
+}
 /* Media queries */
 
 @media (min-width: 768px) {
     .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 60px) minmax(0, 1fr);
     grid-template-areas:
     "header header"
     "nav main";
     }
 
     header {
-        grid-template-columns: 1fr 320px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
     }
 
     main {
-        grid-template-columns: 50%;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
     }
 
     #linkbox {
@@ -236,11 +256,13 @@ main {
         margin: 5px;
     }
 
-    .widget-container-half {
+
+    
+    #daily-border-container {
         border-right: 1px solid #ececec;
     }
 
-   .social, #alert, .dashboard, .border-container {
+   .social, #alert, .dashboard, .border-container,#social-border-container {
         grid-column: 1 / span 2;
     }
 
@@ -252,20 +274,49 @@ main {
         grid-column: 2 / span 1;
     }
 
-    .widget-container-full {
-        width: 90vw;
+    #traffic-header-flexcontainer {
+        display: flex;
+        grid-column: span 2;
     }
 
-    .widget-container-half {
+    #traffic-options {
+        margin-left: auto;
+    }
+
+    .widget-container-full.traffic{    
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .widget-container-full, .widget-container-half {
+        margin-left: 30px;
+    }
+    #line-chart-canvas-container {
+        grid-column: 1 / span 2;
+    }
+
+    #social-border-container {
+        border-top: 1px solid #ececec;
+    }
+
+    .widget-container-full {
+        width: 88vw;
+    }
+
+    .widget-container-half .daily {
+        width: 45vw;
+    }
+
+    .widget-container-half .mobile {
         width: 45vw;
     }
 
     .search-bar {
-        grid-template-columns: auto 400px;
+        grid-template-columns: minmax(0, auto) minmax(0, 400px);
     }
 
     .search-bar > input {
-        margin-right: 40px;
+        margin-right: 40px; 
     }
     
 }
