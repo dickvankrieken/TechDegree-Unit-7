@@ -56,6 +56,7 @@ header {
     position: absolute;
     top: 0px;
     right: 300px;
+    z-index: 101;
 }
 
 .notifications-dropdown > ul {
@@ -114,7 +115,7 @@ nav {
 }
 
 #linkbox {
-    width: 280px;
+    width: 240px;
     margin: 0 auto;
 }
 
@@ -162,12 +163,6 @@ main {
     border-radius: 20px;
 }
 
-.traffic-border-container {
-    border-bottom: 1px solid #ececec;
-    padding-bottom: 20px;
-}
-
-
 #line-chart-canvas-container, #canvas-container-daily, #canvas-container-mobile {
     display: block;
     height: 200px;
@@ -186,18 +181,22 @@ main {
 
  .search-bar {
     display: grid;
-    grid-template-columns: minmax(0, auto) minmax(0, 400px);
+    grid-template-columns: minmax(0, auto) minmax(0, 250px);
     background-color: #f8f8f8;
     border-bottom: 1px solid#ececec;
     border-left: 1px solid #ececec;
     border-radius: 0 0 0 3px;
 }
 
-.search-bar > input {
-    margin-top: 15px;
-    margin-right: 20px;
-    height: 30px;
-    border-radius: 3px;
+#myInput {
+    margin-top: 15px!important;
+    height: 30px!important;
+    border-radius: 3px!important;
+    width: 200px !important;
+}
+
+.easy-autocomplete-container {
+    width: 228px !important;
 }
 
 /* Alert box */
@@ -238,7 +237,6 @@ main {
     background-color: #f9f9f9;
     width: 85vw;
     border-radius: 5px;
-    /* padding-top: 20px; */
 }
 
 .social-box {
@@ -253,12 +251,6 @@ main {
 .social-text-container > span {
     font-size: 2.5em;
 }
-
-#social-border-container {
-    padding: 0 0 30px 0;
-    border-bottom: 1px solid #ececec;
-}
-
 /* New members section */
 
 .member {
@@ -282,7 +274,6 @@ main {
     margin: 0 10px;
 }
 
-
 .member-info > a {
     margin: 0 10px;
     font-size: 13px;
@@ -297,10 +288,6 @@ main {
 
 .member:last-child {
     border: none;
-}
-
-#members-border-container {
-    border-bottom: 1px solid #ececec;
 }
 
 /* recent activity */
@@ -331,15 +318,7 @@ main {
     border: none;
 }
 
-#activity-border-container {
-    border-bottom: 1px solid #ececec;
-}
-
 /* message user */
-#message-border-container {
-    border-bottom: 1px solid #ececec;
-    padding-right: 20px;
-}
 
 #search-user, #message-user {
     border-radius: 5px;
@@ -386,7 +365,7 @@ main {
     height: 0;
   }
   
-  /* The slider */
+  /* settings: the slider */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -406,7 +385,7 @@ main {
       left: 35px;
   }
   
-  .slider:before {
+  .slider:after {
     position: absolute;
     content: "";
     height: 26px;
@@ -427,7 +406,7 @@ main {
     box-shadow: 0 0 1px #2196F3;
   }
   
-  input:checked + .slider:before {
+  input:checked + .slider:after {
     -webkit-transform: translateX(65px);
     -ms-transform: translateX(65px);
     transform: translateX(65px);
@@ -497,7 +476,7 @@ main {
     stroke-width: 20px;
     stroke-opacity: 0;
     fill: white;
-    transition: fill 2s;
+    transition: 2s ease;
 }
 
 .alarmbell:hover {
@@ -506,9 +485,22 @@ main {
 
 /* border containers */
 
-.half-border-container {
+.half-border-container, #members-border-container, .traffic-border-container,  #social-border-container, #activity-border-container, #message-border-container {
     border-bottom: 1px solid #ececec;
 }
+
+.traffic-border-container {
+    padding-bottom: 20px;
+}
+
+#social-border-container {
+    padding-bottom: 30px;
+}
+
+#message-border-container {
+    padding-right: 20px;
+}
+
 
 /* Media queries */
 
@@ -576,11 +568,7 @@ main {
         grid-column: 1 / span 2;
     }
 
-    .widget-container-half .daily {
-        width: 45vw;
-    }
-
-    .widget-container-half .mobile {
+    .widget-container-half .daily, .widget-container-half .mobile {
         width: 45vw;
     }
 
@@ -596,7 +584,6 @@ main {
         width: 28vw;
     }
 
-
     #social-stats-flexcontainer {
         flex-direction: row;
     }
@@ -610,11 +597,18 @@ main {
     }
 
     .members-right > p {
-        margin: 0 0 10px 0;
+        margin-bottom: 10px;
     }
 
     #message-border-container {
         border-right: 1px solid #ececec;
+    }
+
+    #myInput {
+        width: 350px !important;
+    }
+    .easy-autocomplete-container {
+        width: 375px !important;
     }
 }
 

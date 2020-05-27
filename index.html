@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script src="js/jquery.easy-autocomplete.min.js"></script>
+<link rel="stylesheet" href="css/easy-autocomplete.min.css">
+<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css">
+
+
 </head>
 
 <body>
@@ -25,10 +30,18 @@
                     </svg>
                     <div class="notifications-dropdown" id="dropdown-menu" style="display: none">
                         <ul>
-                            <li class="dropdown-listitem"><p>Victoria likes your post.</p><span class="close-button">x</span></li>
-                            <li class="dropdown-listitem"><p>Dale commented on your post.</p><span class="close-button">x</span></li>
-                            <li class="dropdown-listitem"><p>Dawn shared a link.</p><span class="close-button">x</span></li>
-                            <li class="dropdown-listitem"><p>Dan sent you a message.</p><span class="close-button">x</span></li>
+                            <li class="dropdown-listitem">
+                                <p>Victoria likes your post.</p><span class="close-button">x</span>
+                            </li>
+                            <li class="dropdown-listitem">
+                                <p>Dale commented on your post.</p><span class="close-button">x</span>
+                            </li>
+                            <li class="dropdown-listitem">
+                                <p>Dawn shared a link.</p><span class="close-button">x</span>
+                            </li>
+                            <li class="dropdown-listitem">
+                                <p>Dan sent you a message.</p><span class="close-button">x</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +70,9 @@
                     <div id="empty-space">
 
                     </div>
-                    <input type="text" placeholder="Search..">
+                    <div class="autocomplete" id="search-bar">
+                        <input type="text" placeholder="Search.." id="myInput">
+                    </div>
                 </div>
             </div>
 
@@ -297,7 +312,7 @@
                         <div id="notification-container">
                             <p class="notification-text">Send Email Notifications</p>
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input id="email-setting" type="checkbox" checked="checked">
                                 <span id="notifications-slider" class="slider slider-on">
                                     <span class="slider-text">ON</span>
                                 </span>
@@ -306,7 +321,7 @@
                         <div id="public-container">
                             <p class="notification-text">Set Profile to Public</p>
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input id="profile-setting" type="checkbox" checked="checked">
                                 <span id="public-slider" class="slider slider-on">
                                     <span class="slider-text">ON</span>
                                 </span>
@@ -318,7 +333,7 @@
                         <option value="Eastern">Eastern</option>
                     </select>
                     <div id="settings-buttons-container">
-                        <button id="settings-save-button">SAVE</button>
+                        <button type="button" id="settings-save-button">SAVE</button>
                         <button id="settings-cancel-button">CANCEL</button>
                     </div>
                 </form>
